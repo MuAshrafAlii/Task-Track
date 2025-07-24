@@ -1,6 +1,6 @@
 package com.ashraf.spring1.game;
 
-public class MarioGame {
+public class MarioGame implements  GamingConsole {
 
     public void up() {
         System.out.println("MarioGame up");

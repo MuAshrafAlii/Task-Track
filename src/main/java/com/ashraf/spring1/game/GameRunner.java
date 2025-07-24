@@ -1,8 +1,8 @@
 package com.ashraf.spring1.game;
 
 public class GameRunner {
-    private MarioGame game;
-    public GameRunner(MarioGame game) {
+    private GamingConsole game;
+    public GameRunner(GamingConsole game) {
         this.game=game;
     }
 
