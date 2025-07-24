@@ -1,6 +1,7 @@
 package com.ashraf.spring1;
 
 import com.ashraf.spring1.game.GameRunner;
+import com.ashraf.spring1.game.GamingConsole;
 import com.ashraf.spring1.game.MarioGame;
 import com.ashraf.spring1.game.SuperContraGame;
 import org.springframework.boot.SpringApplication;
@@ -14,7 +15,9 @@ public class Spring1Application {
 //		SpringApplication.run(Spring1Application.class, args);
 
 //		MarioGame game = new MarioGame();
-		SuperContraGame game = new SuperContraGame();
+//		SuperContraGame game = new SuperContraGame();
+
+		GamingConsole game = new SuperContraGame();
 		GameRunner runner = new GameRunner(game);
 		runner.run();
 	}
