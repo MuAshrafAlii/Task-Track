@@ -1,7 +1,16 @@
-create table course
-(
-    id bigint NOT NULL,
+CREATE TABLE course (
+    id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
-    author VARCHAR(255) NOT NULL,
-    primary key (id)
+    author VARCHAR(255) NOT NULL
 );
+
+INSERT INTO COURSE (NAME, AUTHOR) VALUES ('Spring Basics', 'Muhammad');
+INSERT INTO COURSE (NAME, AUTHOR) VALUES ('Java Fundamentals', 'John Doe');
+INSERT INTO COURSE (NAME, AUTHOR) VALUES ('Spring Boot in Depth', 'Sarah');
+INSERT INTO COURSE (NAME, AUTHOR) VALUES ('JPA and Hibernate', 'Ali');
+INSERT INTO COURSE (NAME, AUTHOR) VALUES ('Spring Security', 'Ahmed');
+INSERT INTO COURSE (NAME, AUTHOR) VALUES ('REST API Design', 'Fatima');
+INSERT INTO COURSE (NAME, AUTHOR) VALUES ('Spring WebFlux', 'Khalid');
+INSERT INTO COURSE (NAME, AUTHOR) VALUES ('Java Streams', 'Zara');
+INSERT INTO COURSE (NAME, AUTHOR) VALUES ('Unit Testing with JUnit', 'Omar');
+INSERT INTO COURSE (NAME, AUTHOR) VALUES ('Microservices with Spring', 'Layla');
