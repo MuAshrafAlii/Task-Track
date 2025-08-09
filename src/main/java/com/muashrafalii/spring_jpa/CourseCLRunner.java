@@ -21,6 +21,7 @@ public class CourseCLRunner implements CommandLineRunner {
 //        repository.deleteById(1);
 
         System.out.println(repository.findById(0l));
+        System.out.println(repository.findByAuthor("Mido y3m"));
 //        System.out.println(repository.findById(1));
     }
 }
