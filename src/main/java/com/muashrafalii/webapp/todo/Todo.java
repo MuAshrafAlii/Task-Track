@@ -6,15 +6,15 @@ public class Todo {
     private long id;
     private String username;
     private String description;
-    private LocalDate targetdate;
-    private boolean isdone;
+    private LocalDate targetDate;
+    private boolean isDone;
 
-    public Todo(long id, String username, String description, LocalDate targetdate, boolean isdone) {
+    public Todo(long id, String username, String description, LocalDate targetDate, boolean isDone) {
         this.id = id;
         this.username = username;
         this.description = description;
-        this.targetdate = targetdate;
-        this.isdone = isdone;
+        this.targetDate = targetDate;
+        this.isDone = isDone;
     }
 
     public long getId() {
@@ -41,20 +41,20 @@ public class Todo {
         this.description = description;
     }
 
-    public LocalDate getTargetdate() {
-        return targetdate;
+    public LocalDate getTargetDate() {
+        return targetDate;
     }
 
-    public void setTargetdate(LocalDate targetdate) {
-        this.targetdate = targetdate;
+    public void setTargetDate(LocalDate targetDate) {
+        this.targetDate = targetDate;
     }
 
-    public boolean isIsdone() {
-        return isdone;
+    public boolean getIsDone() {
+        return isDone;
     }
 
-    public void setIsdone(boolean isdone) {
-        this.isdone = isdone;
+    public void setIsDone(boolean done) {
+        this.isDone = done;
     }
 
     @Override
@@ -63,8 +63,8 @@ public class Todo {
                 "id=" + id +
                 ", username='" + username + '\'' +
                 ", description='" + description + '\'' +
-                ", targetdate=" + targetdate +
-                ", isdone=" + isdone +
+                ", targetdate=" + targetDate +
+                ", isdone=" + isDone +
                 '}';
     }
 }
