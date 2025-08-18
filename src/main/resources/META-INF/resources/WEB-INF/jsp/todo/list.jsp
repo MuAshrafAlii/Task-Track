@@ -11,7 +11,7 @@
         <!-- Welcome Header -->
         <div class="row mb-4">
             <div class="col text-center">
-                <h1 class="display-6 text-primary">Welcome, ${name} 👋</h1>
+                <h1 class="display-6 text-primary">Welcome, ${name}</h1>
                 <p class="lead text-secondary">Here are your todos:</p>
             </div>
         </div>
