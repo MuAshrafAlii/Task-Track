@@ -52,6 +52,8 @@
         </div>
     </div>
 
+    <a href="add-todo" class="btn success"> Add Todo </a>
+
     <!-- jQuery -->
     <script src="/webjars/jquery/3.7.1/jquery.min.js"></script>
 
