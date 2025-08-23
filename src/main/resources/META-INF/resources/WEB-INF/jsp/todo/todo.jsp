@@ -3,8 +3,10 @@
 
 <html>
 <head>
-    <link href="webjars/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet"/>
     <title>Add Todo Page</title>
+    <link rel="stylesheet" href="/webjars/bootstrap/5.3.7/css/bootstrap.min.css"/>
+
+    <link rel="stylesheet" href="/webjars/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css"/>
 </head>
 <body>
 <div class="container">
@@ -22,7 +24,7 @@
 
         <fieldset>
             <form:label path="targetDate">Target Date:</form:label>
-            <form:input type="date" path="targetDate"/>
+            <form:input type="text" path="targetDate"/>
             <form:errors path="targetDate" cssClass="text-warning" />
         </fieldset>
 
@@ -31,7 +33,24 @@
 
 </div>
 
-<script src="webjars/bootstrap/5.1.3/js/bootstrap.min.js"></script>
-<script src="webjars/jquery/3.6.0/jquery.min.js"></script>
+
+<<!-- jQuery -->
+     <script src="/webjars/jquery/3.7.1/jquery.min.js"></script>
+
+     <!-- Bootstrap JS -->
+     <script src="/webjars/bootstrap/5.3.7/js/bootstrap.bundle.min.js"></script>
+
+     <script src="/webjars/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+
+     <script>
+         $(document).ready(function () {
+             // Initialize Bootstrap Datepicker
+             $('#targetDate').datepicker({
+                 format: 'yyyy-mm-dd',   // format compatible with Spring's default LocalDate binder
+                 todayHighlight: true,   // highlights today's date
+                 autoclose: true         // closes picker after selection
+             });
+         });
+     </script>
 </body>
 </html>
