@@ -1,11 +1,5 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<html>
-<head>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="/webjars/bootstrap/5.3.7/css/bootstrap.min.css"/>
-    <title>List Todos</title>
-</head>
-<body class="bg-light">
+<%@ include file="../common/header.jspf" %>
+<%@ include file="../common/navigation.jspf" %>
 
     <div class="container mt-5">
         <!-- Welcome Header -->
@@ -54,14 +48,10 @@
                 </table>
             </div>
         </div>
+        <div class="row mt-3">
+            <div class="col text-center">
+                <a href="add-todo" class="btn btn-success">Add Todo</a>
+            </div>
+        </div>
     </div>
-
-    <a href="add-todo" class="btn success"> Add Todo </a>
-
-    <!-- jQuery -->
-    <script src="/webjars/jquery/3.7.1/jquery.min.js"></script>
-
-    <!-- Bootstrap JS -->
-    <script src="/webjars/bootstrap/5.3.7/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+<%@ include file="../common/footer.jspf" %>
