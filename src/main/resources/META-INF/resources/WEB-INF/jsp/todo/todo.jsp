@@ -11,10 +11,21 @@
     <h1>Enter Todo Details</h1>
 
     <form:form method="post" modelAttribute="todo">
-        Description:
         <form:hidden path="id"/>
         <form:hidden path="isDone"/>
-        <form:input type="text" path="description"/>
+
+        <fieldset>
+            <form:label path="description">Description:</form:label>
+            <form:input type="text" path="description"/>
+            <form:errors path="description" cssClass="text-warning" />
+        </fieldset>
+
+        <fieldset>
+            <form:label path="targetDate">Target Date:</form:label>
+            <form:input type="date" path="targetDate"/>
+            <form:errors path="targetDate" cssClass="text-warning" />
+        </fieldset>
+
         <input type="submit" class="btn btn-success"/>
     </form:form>
 

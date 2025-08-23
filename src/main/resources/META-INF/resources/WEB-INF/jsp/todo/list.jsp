@@ -26,6 +26,8 @@
                             <th>Description</th>
                             <th>Target Date</th>
                             <th>Done?</th>
+                            <th>Update</th>
+                            <th>Delete</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -44,6 +46,8 @@
                                         </c:otherwise>
                                     </c:choose>
                                 </td>
+                                <td><a href="update-todo?id=${todo.id}" class="btn btn-warning"> UPDATE </a></td>
+                                <td><a href="delete-todo?id=${todo.id}" class="btn btn-danger"> DELETE </a></td>
                             </tr>
                         </c:forEach>
                     </tbody>
