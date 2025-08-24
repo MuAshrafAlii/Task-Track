@@ -7,11 +7,13 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import java.time.LocalDate;
 import java.util.List;
 
 @Controller
+@SessionAttributes("name")
 public class TodoController {
 
     private TodoService todoService;
@@ -22,7 +24,8 @@ public class TodoController {
 
     @RequestMapping(value = "list-todos")
     public String showTodosList(ModelMap model) {
-        List<Todo> todos = todoService.findByUsername("muashraf");
+        String username = (String) model.get("name");
+        List<Todo> todos = todoService.findByUsername(username);
         model.addAttribute("todos", todos);
         return "todo/list";
     }
