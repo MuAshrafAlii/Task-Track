@@ -6,41 +6,43 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class TodoService {
-    private static List<Todo> todos = new ArrayList<>();
-    private static int todoCcount = 0;
+    private TodoRepository todoRepository;
 
-    static {
-        todos.add(new Todo(++todoCcount, "mido", "Complete Spring Boot tutorial", LocalDate.now().plusYears(1), false));
-        todos.add(new Todo(++todoCcount, "mido", "Learn Hibernate JPA", LocalDate.now().plusMonths(6), false));
-        todos.add(new Todo(++todoCcount, "muashraf", "Prepare for Java certification", LocalDate.now().plusWeeks(12), false));
-        todos.add(new Todo(++todoCcount, "7mada", "Build personal portfolio website", LocalDate.now().plusDays(45), true));
+    public TodoService(TodoRepository todoRepository) {
+        this.todoRepository = todoRepository;
     }
 
     public List<Todo> findByUsername(String username) {
-        return todos.stream()
-                .filter(todo -> todo.getUsername().equalsIgnoreCase(username))
-                .toList();
+        return todoRepository.findByUsername(username);
     }
 
-    public void addTodo(String username, String description, LocalDate targetDate, boolean isDone) {
-        Todo todo = new Todo(++todoCcount,username,description,targetDate,isDone);
-        todos.add(todo);
+    public Optional<Todo> findById(Long id) {
+        if (id == null || id <= 0) return Optional.empty();
+
+        // Spring Data JPA returns Optional<Todo> here.
+        return todoRepository.findById(id);
     }
 
-    public void deleteTodo(int id) {
-        todos.removeIf(todo -> todo.getId() == id);
+    public Todo addTodo(TodoDTO dto, String username) {
+        Todo entity = new Todo();
+        entity.setUsername(username);
+        entity.setDescription(dto.getDescription());
+        entity.setTargetDate(dto.getTargetDate());
+        entity.setIsDone(dto.isDone());
+        return todoRepository.save(entity);
     }
 
-    public Todo findbyId(int id) {
-        return todos.stream().filter(todo -> todo.getId() == id).findFirst().get();
+    public void deleteTodo(Long id) {
+        if (id == null || id <= 0) return; // defensive
+        todoRepository.deleteById(id);
     }
 
     public void updateTodo(@Valid Todo todo) {
-        deleteTodo((int) todo.getId());
-        todos.add(todo);
+        todoRepository.save(todo);
 
     }
 }

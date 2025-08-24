@@ -4,8 +4,6 @@
     <h1>Enter Todo Details</h1>
 
     <form:form method="post" modelAttribute="todo">
-        <form:hidden path="id"/>
-        <form:hidden path="isDone"/>
 
         <fieldset>
             <form:label path="description">Description:</form:label>
