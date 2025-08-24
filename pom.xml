@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.muashrafalii</groupId>
-	<artifactId>webapp</artifactId>
+	<artifactId>task-tracker</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>webapp</name>
+	<name>task-tracker</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>
